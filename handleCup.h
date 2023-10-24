@@ -2,6 +2,7 @@
 #define HANDLECUP_H
 
 #include <Arduino.h>
+#include "vibrator.h"
 
 int LEDr = 2;
 int LEDg = 4;
@@ -30,6 +31,7 @@ void handleCup(){
         digitalWrite(LEDg, LOW);  // Turn off the LED
         delay(50);  
         buttonState = digitalRead(buttonPin);
+        vibrateUpdate();
       } while (buttonState == LOW);
       do
       {
@@ -42,6 +44,7 @@ void handleCup(){
         digitalWrite(LEDr, LOW);
         delay(1000);                // Wait for 50 milliseconds
         buttonState = digitalRead(buttonPin);
+        vibrateUpdate();
       } while (buttonState == HIGH);
 }
 
