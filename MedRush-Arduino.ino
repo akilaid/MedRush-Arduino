@@ -1,6 +1,7 @@
 #include <SoftwareSerial.h>
 #include "handleDispense.h"
 #include "vibrator.h"
+#include "emptyTrays.h"
 
 SoftwareSerial Slave(10, 11); // RX, TX
 
@@ -40,7 +41,7 @@ void loop()
     Serial.println("Command : " + letters);
     if (letters == "emptyTrays")
     {
-      dispenseMorning();
+      emptyTrays();
     }
     else if (letters == "dropPillsM")
     {
